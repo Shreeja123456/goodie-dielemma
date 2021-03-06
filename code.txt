@@ -1,0 +1,40 @@
+
+li=list()
+lii=[]
+afile=open('sample_input.txt','r')
+N=int(input())
+lines_to_read =range(0,N,1)
+
+for position, line in enumerate(afile):
+
+
+    if position in lines_to_read:
+        li.append(line)
+
+
+
+li = [i.split('\n')[0] for i in li] 
+
+
+def findLargestNumber(text):
+    ls = list()
+    for w in text.split():
+        try:
+            ls.append(int(w))
+        except:
+            pass
+    try:
+        return max(ls)
+    except:
+        return None   
+for i in li:
+  lii.append(findLargestNumber(i))
+
+maximum=max(lii)
+
+minimum=min(lii)
+print("input",li)
+print("input values of cost are are",lii)
+diff=maximum-minimum
+print("difference is",diff)
+
